@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>the emit — live 2026.10.02</title>
+  <meta name="description" content="the emit live — 2026.10.02 at night cafe otto, akasaka, tokyo">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F1EDE5;
+      --text: #161616;
+      --muted: rgba(22, 22, 22, .62);
+      --line: rgba(22, 22, 22, .22);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px 22px;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+                   "Hiragino Sans", "Yu Gothic", sans-serif;
+    }
+
+    main {
+      width: min(100%, 560px);
+    }
+
+    .title {
+      margin: 0 0 42px;
+      font-family: "Fugaz One", sans-serif;
+      font-size: clamp(52px, 15vw, 92px);
+      line-height: .9;
+      letter-spacing: -0.03em;
+      font-weight: 400;
+      text-transform: lowercase;
+    }
+
+    .date {
+      font-family: "Fugaz One", sans-serif;
+      font-size: clamp(25px, 7vw, 38px);
+      letter-spacing: .02em;
+      margin-bottom: 18px;
+    }
+
+    .rule {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 0 0 20px;
+    }
+
+    .info {
+      display: grid;
+      gap: 8px;
+      font-size: 16px;
+      line-height: 1.45;
+      letter-spacing: .01em;
+    }
+
+    .main-info {
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .cash {
+      margin-top: 2px;
+      font-size: 12px;
+      letter-spacing: .13em;
+      text-transform: lowercase;
+      color: var(--muted);
+    }
+
+    .venue {
+      margin-top: 28px;
+    }
+
+    .venue-name {
+      font-family: "Fugaz One", sans-serif;
+      font-size: 21px;
+      text-transform: lowercase;
+      margin-bottom: 2px;
+    }
+
+    .location {
+      color: var(--muted);
+      font-size: 14px;
+      text-transform: lowercase;
+      letter-spacing: .04em;
+    }
+
+    .rsvp {
+      margin-top: 42px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .rsvp-label {
+      font-family: "Fugaz One", sans-serif;
+      font-size: 18px;
+      text-transform: lowercase;
+      letter-spacing: .02em;
+    }
+
+    .rsvp-status {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: lowercase;
+    }
+
+    @media (max-width: 420px) {
+      .title { margin-bottom: 34px; }
+      .info { font-size: 15px; }
+      .main-info { font-size: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1 class="title">the emit</h1>
+
+    <div class="date">2026 10.02</div>
+    <hr class="rule">
+
+    <div class="info">
+      <div class="main-info">open 19:00 / start 20:00</div>
+      <div class="main-info">2 drinks + music ¥3,000</div>
+      <div class="cash">cash only</div>
+    </div>
+
+    <div class="venue">
+      <div class="venue-name">night cafe otto</div>
+      <div class="location">akasaka, tokyo</div>
+    </div>
+
+    <div class="rsvp">
+      <div class="rsvp-label">rsvp</div>
+      <div class="rsvp-status">coming soon</div>
+    </div>
+  </main>
+</body>
+</html>
