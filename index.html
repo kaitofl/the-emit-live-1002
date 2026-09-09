@@ -5,63 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>the emit — live 2026.10.02</title>
   <meta name="description" content="the emit live — 2026.10.02 at night cafe otto, akasaka, tokyo">
+  <meta name="theme-color" content="#F1EDE5">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
 
-  
   <style>
     :root {
       --bg: #F1EDE5;
       --text: #161616;
       --muted: rgba(22, 22, 22, .62);
       --line: rgba(22, 22, 22, .22);
+      --focus: #8d361f;
     }
 
     * { box-sizing: border-box; }
 
-    html, body {
-      margin: 0;
+    html {
       min-height: 100%;
       background: var(--bg);
-      color: var(--text);
+      scroll-behavior: smooth;
     }
 
     body {
       min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 28px 22px;
+      margin: 0;
+      padding: 54px 22px 72px;
+      background: var(--bg);
+      color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
                    "Hiragino Sans", "Yu Gothic", sans-serif;
     }
 
     main {
       width: min(100%, 560px);
+      margin: 0 auto;
     }
 
     .title {
       margin: 0 0 42px;
       font-family: "Fugaz One", sans-serif;
       font-size: clamp(52px, 15vw, 92px);
-      line-height: .9;
-      letter-spacing: -0.03em;
       font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.03em;
       text-transform: lowercase;
+      animation: enter .7s cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    .event-details {
+      animation: enter .7s .08s cubic-bezier(.2, .8, .2, 1) both;
     }
 
     .date {
+      margin-bottom: 18px;
       font-family: "Fugaz One", sans-serif;
       font-size: clamp(25px, 7vw, 38px);
       letter-spacing: .02em;
-      margin-bottom: 18px;
     }
 
     .rule {
+      margin: 0 0 20px;
       border: 0;
       border-top: 1px solid var(--line);
-      margin: 0 0 20px;
     }
 
     .info {
@@ -79,55 +86,250 @@
 
     .cash {
       margin-top: 2px;
+      color: var(--muted);
       font-size: 12px;
       letter-spacing: .13em;
       text-transform: lowercase;
-      color: var(--muted);
     }
 
-    .venue {
-      margin-top: 28px;
-    }
+    .venue { margin-top: 28px; }
 
     .venue-name {
+      margin-bottom: 2px;
       font-family: "Fugaz One", sans-serif;
       font-size: 21px;
       text-transform: lowercase;
-      margin-bottom: 2px;
     }
 
     .location {
       color: var(--muted);
       font-size: 14px;
-      text-transform: lowercase;
       letter-spacing: .04em;
+      text-transform: lowercase;
     }
 
     .rsvp {
       margin-top: 42px;
-      padding-top: 20px;
+      padding-top: 22px;
       border-top: 1px solid var(--line);
+      animation: enter .7s .16s cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    .rsvp-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
     }
 
     .rsvp-label {
+      margin: 0;
       font-family: "Fugaz One", sans-serif;
       font-size: 18px;
-      text-transform: lowercase;
+      font-weight: 400;
       letter-spacing: .02em;
+      text-transform: lowercase;
     }
 
-    .rsvp-status {
-      margin-top: 4px;
+    .rsvp-note {
+      margin: 0;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 112px;
+      gap: 24px 22px;
+    }
+
+    .field { display: grid; gap: 8px; }
+
+    .field-wide { grid-column: 1 / -1; }
+
+    .attendance { margin: 0; padding: 0; border: 0; }
+    .attendance legend { margin-bottom: 12px; font-size: 12px; font-weight: 600; letter-spacing: .08em; }
+    .attendance-options { display: flex; flex-wrap: wrap; gap: 12px 28px; }
+    .attendance-options label { display: flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; font-size: 14px; }
+    .attendance-options input { width: 18px; min-height: 18px; height: 18px; margin: 0; accent-color: var(--text); }
+    .attendance-options input:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+    .field-hint { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; font-weight: 400; }
+
+    label {
+      font-size: 12px;
+      font-weight: 600;
       letter-spacing: .08em;
-      text-transform: lowercase;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 0;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-size: 16px;
+      transition: border-color .2s ease;
+    }
+
+    input::placeholder { color: rgba(22, 22, 22, .35); }
+
+    input:focus,
+    select:focus { border-color: var(--focus); }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, var(--text) 50%),
+        linear-gradient(135deg, var(--text) 50%, transparent 50%);
+      background-position:
+        calc(100% - 7px) 50%,
+        calc(100% - 2px) 50%;
+      background-size: 5px 5px, 5px 5px;
+      background-repeat: no-repeat;
+    }
+
+    .privacy {
+      grid-column: 1 / -1;
+      margin: -4px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .submit-row {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(100%, 240px);
+      min-height: 52px;
+      padding: 0 18px;
+      border: 1px solid var(--text);
+      border-radius: 0;
+      background: var(--text);
+      color: var(--bg);
+      cursor: pointer;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    button:hover {
+      background: transparent;
+      color: var(--text);
+      transform: translateY(-2px);
+    }
+
+    button:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    button:disabled {
+      opacity: .5;
+      cursor: wait;
+      transform: none;
+    }
+
+    .arrow {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1;
+      transition: transform .2s ease;
+    }
+
+    button:hover .arrow { transform: translateX(4px); }
+
+    .form-status {
+      flex: 1;
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .form-status[data-state="error"] { color: var(--focus); }
+
+    .success {
+      padding: 22px 0 6px;
+      border-top: 1px solid var(--line);
+      animation: enter .45s cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    .success-title {
+      margin: 0 0 8px;
+      font-family: "Fugaz One", sans-serif;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: .01em;
+    }
+
+    .success p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    [hidden] { display: none !important; }
+
+    @keyframes enter {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 420px) {
+      body { padding-top: 36px; }
       .title { margin-bottom: 34px; }
       .info { font-size: 15px; }
       .main-info { font-size: 16px; }
+      .rsvp-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .form-grid { grid-template-columns: 1fr 88px; }
+      .field-name { grid-column: 1 / -1; }
+      .submit-row {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 10px;
+      }
+      button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
@@ -136,24 +338,162 @@
   <main>
     <h1 class="title">the emit</h1>
 
-    <div class="date">2026 10.02</div>
-    <hr class="rule">
+    <section class="event-details" aria-label="イベント詳細">
+      <div class="date">2026 10.02</div>
+      <hr class="rule">
 
-    <div class="info">
-      <div class="main-info">open 19:00 / start 20:00</div>
-      <div class="main-info">2 drinks + music ¥3,000</div>
-      <div class="cash">cash only</div>
-    </div>
+      <div class="info">
+        <div class="main-info">open 19:00 / start 20:00</div>
+        <div class="main-info">2 drinks + music ¥3,000</div>
+        <div class="cash">cash only</div>
+      </div>
 
-    <div class="venue">
-      <div class="venue-name">night cafe otto</div>
-      <div class="location">akasaka, tokyo</div>
-    </div>
+      <div class="venue">
+        <div class="venue-name">night cafe otto</div>
+        <div class="location">akasaka, tokyo</div>
+      </div>
+    </section>
 
-    <div class="rsvp">
-      <div class="rsvp-label">rsvp</div>
-      <div class="rsvp-status">coming soon</div>
-    </div>
+    <section class="rsvp" aria-labelledby="rsvp-title">
+      <div class="rsvp-heading">
+        <h2 class="rsvp-label" id="rsvp-title">rsvp</h2>
+        <p class="rsvp-note">参加登録</p>
+      </div>
+
+      <form id="rsvp-form" novalidate>
+        <div class="form-grid">
+          <div class="field field-name">
+            <label for="name">名前・ニックネーム</label>
+            <input id="name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="誰かわかればOKです" required>
+          </div>
+
+          <div class="field" id="party-field">
+            <label for="party-size">人数</label>
+            <select id="party-size" name="partySize" required>
+              <option value="1">1人</option>
+              <option value="2">2人</option>
+              <option value="3">3人</option>
+              <option value="4">4人</option>
+              <option value="5">5人</option>
+              <option value="6">6人</option>
+            </select>
+          </div>
+
+          <fieldset class="attendance field-wide">
+            <legend>参加予定</legend>
+            <div class="attendance-options">
+              <label><input type="radio" name="attendance" value="行けそう" checked required>行けそう</label>
+              <label><input type="radio" name="attendance" value="行けなくなった" required>行けなくなった</label>
+            </div>
+          </fieldset>
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">ウェブサイト</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <input name="event" type="hidden" value="the emit live 2026.10.02">
+
+          <p class="privacy">予定が変わったら、前回と同じ名前で送ってください。<br>登録内容は、本イベントの参加状況の確認にのみ使用します。</p>
+
+          <div class="submit-row">
+            <button type="submit">
+              <span class="button-label">予定を送る</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </form>
+
+      <div class="success" id="success" tabindex="-1" hidden>
+        <h3 class="success-title">see you there.</h3>
+        <p>参加登録を受け付けました。10月2日に会えるのを楽しみにしています。</p>
+        <button type="button" id="edit-response" style="margin-top: 24px">予定を変更する</button>
+      </div>
+    </section>
   </main>
+
+  <script>
+    // Google Apps Script をデプロイした後、README の手順に沿って URL を貼り付けてください。
+    const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz-qaGyc-KEYXDOMzM2J6-pSbDoykdCJh14tsysrMeVA8IRbeSp9GBrKnVQCL8mtVVe/exec";
+
+    const form = document.querySelector("#rsvp-form");
+    const button = form.querySelector("button[type='submit']");
+    const buttonLabel = button.querySelector(".button-label");
+    const status = document.querySelector("#form-status");
+    const success = document.querySelector("#success");
+    const nameInput = form.elements.name;
+    const partySize = form.elements.partySize;
+    let submitting = false;
+
+    function updateAttendance() {
+      const cancelled = form.elements.attendance.value === "行けなくなった";
+      document.querySelector("#party-field").hidden = cancelled;
+      partySize.disabled = cancelled;
+    }
+    form.addEventListener("change", updateAttendance);
+    document.querySelector("#edit-response").addEventListener("click", () => {
+      success.hidden = true;
+      form.hidden = false;
+      nameInput.focus();
+    });
+    updateAttendance();
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (submitting) return;
+      status.textContent = "";
+      status.dataset.state = "";
+
+      nameInput.value = nameInput.value.trim();
+      if (!form.reportValidity()) return;
+
+      if (RSVP_ENDPOINT.startsWith("PASTE_")) {
+        status.textContent = "現在、受付の準備中です。少し時間をおいてお試しください。";
+        status.dataset.state = "error";
+        return;
+      }
+
+      button.disabled = true;
+      submitting = true;
+      buttonLabel.textContent = "送信中…";
+      form.setAttribute("aria-busy", "true");
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30000);
+
+      try {
+        const payload = new URLSearchParams(new FormData(form));
+        if (payload.get("attendance") === "行けなくなった") payload.set("partySize", "0");
+        const response = await fetch(RSVP_ENDPOINT, {
+          method: "POST",
+          body: payload,
+          credentials: "omit",
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error("HTTP error");
+        const result = await response.json();
+        if (result.ok !== true) throw new Error("Save failed");
+
+        const cancelled = payload.get("attendance") === "行けなくなった";
+        success.querySelector("h3").textContent = cancelled ? "thanks for letting us know." : "see you there.";
+        success.querySelector("p").textContent = cancelled
+          ? "「行けなくなった」で受け付けました。またの機会に会えるのを楽しみにしています。"
+          : "「行けそう」で受け付けました。10月2日に会えるのを楽しみにしています。";
+        form.hidden = true;
+        success.hidden = false;
+        success.focus();
+      } catch (error) {
+        status.textContent = "保存を確認できませんでした。通信環境を確認して、同じ名前でもう一度お試しください。";
+        status.dataset.state = "error";
+      } finally {
+        clearTimeout(timeout);
+        submitting = false;
+        form.removeAttribute("aria-busy");
+        button.disabled = false;
+        buttonLabel.textContent = "予定を送る";
+      }
+    });
+  </script>
 </body>
 </html>
