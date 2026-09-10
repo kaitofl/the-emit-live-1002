@@ -394,7 +394,7 @@
 
           <input name="event" type="hidden" value="the emit live 2026.10.02">
 
-          <p class="privacy">予定が変わったら、前回と同じ名前で送ってください。<br>登録内容は、本イベントの参加状況の確認にのみ使用します。</p>
+          <p class="privacy">登録内容は、本イベントの参加状況の確認にのみ使用します。</p>
 
           <div class="submit-row">
             <button type="submit">
@@ -409,7 +409,6 @@
       <div class="success" id="success" tabindex="-1" hidden>
         <h3 class="success-title">see you there.</h3>
         <p>参加登録を受け付けました。10月2日に会えるのを楽しみにしています。</p>
-        <button type="button" id="edit-response" style="margin-top: 24px">予定を変更する</button>
       </div>
     </section>
   </main>
@@ -433,11 +432,6 @@
       partySize.disabled = cancelled;
     }
     form.addEventListener("change", updateAttendance);
-    document.querySelector("#edit-response").addEventListener("click", () => {
-      success.hidden = true;
-      form.hidden = false;
-      nameInput.focus();
-    });
     updateAttendance();
 
     form.addEventListener("submit", async (event) => {
@@ -484,7 +478,7 @@
         success.hidden = false;
         success.focus();
       } catch (error) {
-        status.textContent = "保存を確認できませんでした。通信環境を確認して、同じ名前でもう一度お試しください。";
+        status.textContent = "保存を確認できませんでした。登録済みの可能性もあるため、主催者にご確認ください。";
         status.dataset.state = "error";
       } finally {
         clearTimeout(timeout);

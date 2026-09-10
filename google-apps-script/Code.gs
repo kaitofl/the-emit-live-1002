@@ -1,5 +1,5 @@
 const SHEET_NAME = '参加予定';
-const HEADERS = ['更新日時', '名前・ニックネーム', '人数', '参加予定', 'イベント'];
+const HEADERS = ['受付日時', '名前・ニックネーム', '人数', '参加予定', 'イベント'];
 const EVENT_NAME = 'the emit live 2026.10.02';
 
 // エディタから一度実行。作成済みの登録先は再利用します。
@@ -31,13 +31,15 @@ function prepareSheet(spreadsheet) {
     sheet.setColumnWidth(3, 65);
     sheet.setColumnWidth(4, 150);
     sheet.setColumnWidth(5, 230);
+  } else if (sheet.getRange(1, 1).getValue() === '更新日時') {
+    sheet.getRange(1, 1).setValue(HEADERS[0]);
   }
   return sheet;
 }
 
 // 公開URLの疎通確認用。参加者の情報は返しません。
 function doGet() {
-  return jsonResponse({ ok: true, event: EVENT_NAME, version: 2 });
+  return jsonResponse({ ok: true, event: EVENT_NAME, version: 3 });
 }
 
 function doPost(event) {
@@ -74,14 +76,10 @@ function doPost(event) {
     const id = PropertiesService.getScriptProperties().getProperty('SPREADSHEET_ID');
     if (!id) throw new Error('Run setup first.');
     const sheet = prepareSheet(SpreadsheetApp.openById(id));
-    const lastRow = sheet.getLastRow();
-    const names = lastRow > 1 ? sheet.getRange(2, 2, lastRow - 1, 1).getDisplayValues() : [];
-    const index = names.findIndex(row => String(row[0]).trim().normalize('NFKC') === name);
-    const row = index < 0 ? lastRow + 1 : index + 2;
-    sheet.getRange(row, 1, 1, HEADERS.length).setValues([[
+    sheet.appendRow([
       new Date(), cleanCell(name), partySize, attendance, EVENT_NAME,
-    ]]);
-    sheet.getRange(row, 1).setNumberFormat('yyyy/mm/dd hh:mm');
+    ]);
+    sheet.getRange(sheet.getLastRow(), 1).setNumberFormat('yyyy/mm/dd hh:mm');
     SpreadsheetApp.flush();
 
     return jsonResponse({ ok: true });
