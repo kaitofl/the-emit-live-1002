@@ -421,6 +421,9 @@
     .menu-section { width: min(680px, 84%); margin: 0 auto; padding: 48px 0; border-bottom: 1px solid var(--line); }
     .menu-section h2 { margin: 0 0 12px; font-family: var(--serif); font-size: 44px; font-weight: 400; }
     .menu-section p { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .15em; }
+    .price-note { display: inline-block; margin-left: 8px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+    .rsvp-heading { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+    .rsvp-description { margin: 0 0 32px; color: var(--muted); font-size: 13px; line-height: 1.9; }
     @media (prefers-reduced-motion: reduce) { .reveal.is-pending { opacity: 1; transform: none; } }
   </style>
 </head>
@@ -435,9 +438,8 @@
         <section class="poster-section" aria-label="ライブ写真">
           <img class="poster" src="assets/live-photo.jpg" alt="暖かな灯りの中でフルートとギターを演奏するthe emitのメンバー。" width="2048" height="1365" fetchpriority="high">
         </section>
-        <section class="lineup" aria-labelledby="lineup-title">
+        <section class="lineup" aria-label="出演メンバー">
           <div class="section-inner">
-            <h2 class="section-label" id="lineup-title">ON STAGE</h2>
             <div class="musicians">
               <p><span>Flute</span>Kaito Yamada</p>
               <p><span>Guitar</span>Motoki Miyajima</p>
@@ -449,8 +451,7 @@
           <div class="date"><time datetime="2026-10-02">10.02</time><small>FRI</small></div>
           <div class="info">
             <div class="main-info">OPEN 19:00 / START 20:00</div>
-            <div class="main-info">2 Drinks + Music &nbsp; ¥3,000</div>
-            <div class="cash">Cash only</div>
+            <div class="main-info">2 Drinks + Music &nbsp; <span style="white-space: nowrap">¥3,000<span class="price-note">[Cash only]</span></span></div>
           </div>
         </div>
         <p class="hero-venue" id="access">Night Cafe OTTO<span>Akasaka, Tokyo</span></p>
@@ -465,9 +466,10 @@
     </section>
     <section class="rsvp" aria-labelledby="rsvp-title">
       <div class="rsvp-heading">
-        <h2 class="rsvp-label" id="rsvp-title">See you there.</h2>
         <p class="rsvp-note">参加登録</p>
+        <h2 class="rsvp-label" id="rsvp-title">RSVP</h2>
       </div>
+      <p class="rsvp-description">参加登録は必須ではありませんが、人数把握のため、ご入力いただけると助かります。</p>
 
       <form id="rsvp-form" novalidate>
         <div class="form-grid">
@@ -503,7 +505,6 @@
 
           <input name="event" type="hidden" value="the emit live 2026.10.02">
 
-          <p class="privacy">登録内容は、本イベントの参加状況の確認にのみ使用します。</p>
 
           <div class="submit-row">
             <button type="submit">
