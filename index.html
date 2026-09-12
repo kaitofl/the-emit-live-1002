@@ -424,12 +424,37 @@
     .price-note { display: inline-block; margin-left: 8px; font-size: 13px; color: var(--muted); white-space: nowrap; }
     .rsvp-heading { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
     .rsvp-description { margin: 0 0 32px; color: var(--muted); font-size: 13px; line-height: 1.9; }
+    main { position: relative; isolation: isolate; overflow: hidden; }
+    .geometry { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+    .geometry svg { position: absolute; width: 100%; height: 100%; }
+    .moon { position: absolute; top: -80px; right: -85px; width: clamp(260px, 35vw, 520px); aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #e9d0a8; transform: rotate(-18deg); }
+    .moon::before { content: ""; position: absolute; inset: 0; background: conic-gradient(from 18deg, #b4a38b 0deg 95deg, #daa044 95deg 225deg, #efd7b5 225deg); }
+    .moon::after { content: ""; position: absolute; inset: 0; opacity: .23; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23n)' opacity='.65' d='M0 0h180v180H0z'/%3E%3C/svg%3E"); }
+    .red-ribbon { position: absolute; top: 0; right: 10%; width: 36px; height: 490px; background: #ac2b24; transform: skewY(-22deg); opacity: .9; }
+    .side-disc { position: absolute; top: 740px; left: -230px; width: 360px; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(from 30deg, #16445b 0deg 180deg, #c18b3d 180deg 260deg, #081723 260deg); }
+    .bottom-disc { position: absolute; bottom: -170px; right: -170px; width: 340px; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(from 10deg, #143b50 0deg 190deg, #af3027 190deg 250deg, #d5b17a 250deg); }
+    .hero { background: transparent; overflow: visible; }
+    .hero-copy { z-index: auto; }
+    .title, .eyebrow, .season { position: relative; }
+    @media (min-width: 800px) { .moon { right: calc(50% - 670px); } .red-ribbon { right: calc(50% - 485px); } }
+    @media (max-width: 799px) {
+      .moon { width: 210px; top: -48px; right: -76px; }
+      .red-ribbon { width: 18px; height: 225px; right: 22px; }
+      .hero-copy { padding-top: 150px; }
+      .side-disc { width: 180px; left: -160px; top: 680px; }
+      .bottom-disc { width: 210px; right: -175px; bottom: 80px; }
+    }
     @media (prefers-reduced-motion: reduce) { .reveal.is-pending { opacity: 1; transform: none; } }
   </style>
 </head>
 
 <body>
   <main>
+    <div class="geometry" aria-hidden="true">
+      <div class="moon"></div><div class="red-ribbon"></div>
+      <div class="side-disc"></div><div class="bottom-disc"></div>
+      <svg viewBox="0 0 1440 2400" preserveAspectRatio="none" fill="none"><path d="M-100 510C70 210 370 95 710 40M-160 1130C80 1200 160 1440 130 1800M1300 2400C1220 2090 1350 1830 1510 1780" stroke="#ecdfc5" stroke-opacity=".45" stroke-width="1"/><path d="M1160 0V420M1170 0V420" stroke="#ecdfc5" stroke-opacity=".4"/></svg>
+    </div>
     <section class="hero" id="top" aria-label="the emit ライブ">
       <div class="hero-copy">
         <p class="eyebrow">JAZZ / R&amp;B / ACOUSTIC LIVE</p>
