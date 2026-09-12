@@ -412,7 +412,11 @@
     .musicians p { font-size: 32px; }
     .musicians span { margin-bottom: 5px; }
     .poster-section { padding: 0; }
-    .poster-section .poster { width: min(680px, 100%); height: auto; margin: 0 auto; animation: none; }
+    .poster-section .poster { width: min(680px, 84%); height: auto; margin: 0 auto; animation: none; }
+    .hero-copy > .poster-section { margin-top: 32px; }
+    .hero-copy > .poster-section .poster { width: 100%; }
+    .hero-copy > .lineup { background: transparent; border: 0; padding: 36px 0 0; }
+    .hero-copy > .lineup .section-inner { width: 100%; }
     .menu-section { width: min(680px, 84%); margin: 0 auto; padding: 48px 0; border-bottom: 1px solid var(--line); }
     .menu-section h2 { margin: 0 0 12px; font-family: var(--serif); font-size: 44px; font-weight: 400; }
     .menu-section p { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .15em; }
@@ -427,6 +431,19 @@
         <p class="eyebrow">JAZZ / R&amp;B / ACOUSTIC LIVE</p>
         <h1 class="title">the emit</h1>
         <div class="season">2026 AUTUMN</div>
+        <section class="poster-section" aria-label="ライブ写真">
+          <img class="poster" src="assets/live-photo.jpg" alt="暖かな灯りの中でフルートとギターを演奏するthe emitのメンバー。" width="2048" height="1365" fetchpriority="high">
+        </section>
+        <section class="lineup" aria-labelledby="lineup-title">
+          <div class="section-inner">
+            <h2 class="section-label" id="lineup-title">ON STAGE</h2>
+            <div class="musicians">
+              <p><span>Flute</span>Kaito Yamada</p>
+              <p><span>Guitar</span>Motoki Miyajima</p>
+              <p><span>Support Guitar</span>Ryu / Yuki</p>
+            </div>
+          </div>
+        </section>
         <div class="event-details" aria-label="イベント詳細">
           <div class="date"><time datetime="2026-10-02">10.02</time><small>FRI</small></div>
           <div class="info">
@@ -440,19 +457,6 @@
         <address class="venue-address">〒107-0052 東京都港区赤坂3-12-11 ゴールド赤坂 8F</address>
         <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Night+Cafe+OTTO+東京都港区赤坂3-12-11" target="_blank" rel="noopener noreferrer">Google Mapで開く <span aria-hidden="true">↗</span></a>
       </div>
-    </section>
-    <section class="lineup" aria-labelledby="lineup-title">
-      <div class="section-inner reveal">
-        <h2 class="section-label" id="lineup-title">ON STAGE</h2>
-        <div class="musicians">
-          <p><span>Flute</span>Kaito Yamada</p>
-          <p><span>Guitar</span>Motoki Miyajima</p>
-          <p><span>Support Guitar</span>Ryu / Yuki</p>
-        </div>
-      </div>
-    </section>
-    <section class="poster-section" aria-label="ライブ写真">
-      <img class="poster" src="assets/live-photo.jpg" alt="暖かな灯りの中でフルートとギターを演奏するthe emitのメンバー。" width="2048" height="1365" loading="lazy">
     </section>
     <section class="menu-section" aria-labelledby="menu-title">
       <h2 id="menu-title">Menu</h2>
@@ -516,7 +520,6 @@
       </div>
     </section>
   </main>
-  <footer><span>the emit — 2026 AUTUMN LIVE</span><span>OCTOBER 2 · NIGHT CAFE OTTO</span></footer>
 
   <script>
     if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
