@@ -408,15 +408,16 @@
     .hero .map-link { margin: 6px 0 36px; border-color: var(--line); }
     .lineup { padding: 44px 0; }
     .lineup .section-inner { width: min(680px, 84%); }
-    .musicians { grid-template-columns: 1fr; gap: 24px; }
-    .musicians p { font-size: 32px; }
-    .musicians span { margin-bottom: 5px; }
+    .musicians { grid-template-columns: 1fr; gap: 10px; }
+    .musicians p { display: flex; align-items: baseline; gap: 14px; font-size: clamp(18px, 4.8vw, 22px); line-height: 1.4; }
+    .musicians span { flex: 0 0 92px; margin: 0; font-size: 14px; }
     .poster-section { padding: 0; }
     .poster-section .poster { width: min(680px, 84%); height: auto; margin: 0 auto; animation: none; }
     .hero-copy > .poster-section { margin-top: 32px; }
     .hero-copy > .poster-section .poster { width: 100%; }
     .hero-copy > .lineup { background: transparent; border: 0; padding: 36px 0 0; }
     .hero-copy > .lineup .section-inner { width: 100%; }
+    .hero-copy > .lineup .section-label { margin-bottom: 16px; }
     .menu-section { width: min(680px, 84%); margin: 0 auto; padding: 48px 0; border-bottom: 1px solid var(--line); }
     .menu-section h2 { margin: 0 0 12px; font-family: var(--serif); font-size: 44px; font-weight: 400; }
     .menu-section p { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .15em; }
