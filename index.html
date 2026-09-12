@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>the emit — live 2026.10.02</title>
   <meta name="description" content="the emit live — 2026.10.02 at night cafe otto, akasaka, tokyo">
-  <meta name="theme-color" content="#F1EDE5">
+  <meta name="theme-color" content="#061b28">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -331,32 +331,133 @@
         transition-duration: .01ms !important;
       }
     }
+    /* Autumn 2026 — the printed invitation, translated to the web. */
+    :root { --bg: #061b28; --text: #f8eed8; --muted: #b7b5ac; --line: #f8eed833; --focus: #e8b865; --serif: "Cormorant Garamond", Georgia, serif; }
+    body { padding: 0; font-family: "Noto Sans JP", sans-serif; }
+    main { width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid var(--focus); outline-offset: 6px; }
+    .masthead { display: flex; justify-content: space-between; align-items: center; padding: 24px 6vw; border-bottom: 1px solid var(--line); }
+    .wordmark { font-family: var(--serif); font-size: 30px; font-weight: 600; }
+    .masthead nav { display: flex; gap: 28px; font-size: 11px; letter-spacing: .12em; }
+    .masthead nav a { padding: 10px 0; border-bottom: 1px solid transparent; transition: border-color .2s; }
+    .masthead nav a:hover { border-color: var(--focus); }
+    .hero { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: min(820px, calc(100svh - 88px)); overflow: hidden; background: #061b28; }
+    .hero-copy { position: relative; z-index: 1; padding: 50px 5vw 60px 8vw; animation: enter .9s both; }
+    .eyebrow { margin: 0 0 30px; color: var(--focus); font-size: 10px; letter-spacing: .25em; line-height: 1.8; }
+    .title { margin: 0 0 14px; font-family: var(--serif); font-size: clamp(68px, 9.8vw, 156px); font-weight: 500; letter-spacing: -.065em; white-space: nowrap; }
+    .season { display: flex; align-items: center; gap: 16px; font-family: var(--serif); font-size: 17px; letter-spacing: .22em; }
+    .season::before { content: ""; width: 42px; height: 1px; background: var(--focus); }
+    .event-details { margin-top: 48px; }
+    .date { margin: 0 0 14px; font-family: var(--serif); font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -.02em; }
+    .date small { margin-left: 12px; font-size: 18px; letter-spacing: .1em; }
+    .main-info { font-family: var(--serif); font-size: 22px; font-weight: 400; }
+    .cash { margin: 2px 0 0; font-size: 10px; text-transform: uppercase; }
+    .hero-venue { margin: 24px 0; font-family: var(--serif); font-size: 23px; }
+    .hero-venue span { display: block; color: var(--muted); font-size: 16px; font-style: italic; }
+    .cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 48px; padding: 17px 23px; background: #b42b22; font-size: 13px; transition: background .2s, transform .2s; }
+    .cta:hover { background: #ce382d; transform: translateY(-2px); }
+    .poster { display: block; justify-self: center; width: auto; max-width: 100%; height: min(760px, calc(100svh - 110px)); object-fit: contain; animation: enter 1.1s .1s both; }
+    .section-inner { width: min(1120px, 84%); margin: 0 auto; }
+    .lineup { padding: 74px 0; border-top: 1px solid var(--line); background: #081923; }
+    .section-label { margin: 0 0 28px; font-size: 10px; letter-spacing: .23em; color: var(--focus); font-weight: 400; }
+    .musicians { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+    .musicians p { margin: 0; font-family: var(--serif); font-size: clamp(24px, 3vw, 36px); line-height: 1.2; }
+    .musicians span { display: block; margin-bottom: 12px; color: var(--muted); font-family: var(--serif); font-size: 17px; }
+    .access { padding: 92px 0; background: #eee3ce; color: #12232c; }
+    .access .section-label { color: #98372c; }
+    .access-grid { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 60px; }
+    .venue-name { margin: 0 0 20px; font-family: var(--serif); text-transform: none; font-size: 80px; font-weight: 500; line-height: .95; }
+    .venue-name span { display: block; margin-bottom: 10px; font-size: 24px; }
+    address { font-style: normal; font-size: 13px; line-height: 2; }
+    .map-link { display: inline-flex; gap: 28px; margin-top: 24px; padding: 10px 0; border-bottom: 1px solid #12232c; font-size: 12px; }
+    .map-link span { transition: transform .2s; }
+    .map-link:hover span { transform: translate(3px, -3px); }
+    .map-frame { width: 100%; height: 360px; border: 0; background: #d9d1c1; }
+    .rsvp { width: min(680px, 84%); margin: 0 auto; padding: 90px 0 100px; border: 0; }
+    .rsvp-label { font-family: var(--serif); font-size: 60px; line-height: 1; text-transform: none; }
+    .rsvp-heading { margin-bottom: 40px; }
+    input::placeholder { color: #9b9c98; }
+    select option { color: var(--text); background: var(--bg); }
+    .attendance-options input { accent-color: var(--focus); }
+    button { background: var(--text); color: var(--bg); }
+    .success-title { font-family: var(--serif); }
+    .form-status[data-state="error"] { color: #ffb2a3; }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding: 24px 8%; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+    .reveal { transition: opacity .7s, transform .7s; }
+    .reveal.is-pending { opacity: 0; transform: translateY(22px); }
+    @media (min-width: 800px) { .hero-copy { border-left: 3px solid #b42b22; margin-left: 4vw; padding-left: 4vw; } }
+    @media (max-width: 799px) {
+      .masthead { padding: 14px 6%; } .wordmark { font-size: 26px; } .masthead nav { gap: 18px; font-size: 10px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-copy { padding: 44px 8% 40px; }
+      .eyebrow { margin-bottom: 22px; } .title { font-size: clamp(76px, 18vw, 128px); margin-bottom: 12px; }
+      .event-details { margin-top: 28px; } .date { font-size: 46px; }
+      .hero-venue { margin: 18px 0; } .poster { width: 100%; height: auto; max-height: none; }
+      .lineup { padding: 50px 0; } .musicians { grid-template-columns: 1fr; gap: 28px; }
+      .musicians p { font-size: 32px; } .musicians span { margin-bottom: 6px; }
+      .access { padding: 56px 0; } .access-grid { grid-template-columns: 1fr; gap: 32px; }
+      .map-frame { height: 320px; } .rsvp { padding: 58px 0 64px; } .rsvp-label { font-size: 50px; }
+      footer { flex-wrap: wrap; line-height: 1.7; }
+    }
+    .hero { display: block; min-height: auto; }
+    .hero-copy { width: min(680px, 84%); margin: 0 auto; padding: 56px 0 0; border: 0; }
+    .hero-venue { margin-bottom: 22px; }
+    .hero .map-frame { display: block; height: 320px; }
+    .venue-address { margin-top: 16px; color: var(--muted); font-size: 12px; }
+    .hero .map-link { margin: 6px 0 36px; border-color: var(--line); }
+    .lineup { padding: 44px 0; }
+    .lineup .section-inner { width: min(680px, 84%); }
+    .musicians { grid-template-columns: 1fr; gap: 24px; }
+    .musicians p { font-size: 32px; }
+    .musicians span { margin-bottom: 5px; }
+    .poster-section { padding: 0; }
+    .poster-section .poster { width: min(680px, 100%); height: auto; margin: 0 auto; animation: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal.is-pending { opacity: 1; transform: none; } }
   </style>
 </head>
 
 <body>
   <main>
-    <h1 class="title">the emit</h1>
-
-    <section class="event-details" aria-label="イベント詳細">
-      <div class="date">2026 10.02</div>
-      <hr class="rule">
-
-      <div class="info">
-        <div class="main-info">open 19:00 / start 20:00</div>
-        <div class="main-info">2 drinks + music ¥3,000</div>
-        <div class="cash">cash only</div>
-      </div>
-
-      <div class="venue">
-        <div class="venue-name">night cafe otto</div>
-        <div class="location">akasaka, tokyo</div>
+    <header class="masthead">
+      <a class="wordmark" href="#top" aria-label="the emit トップ">the emit</a>
+      <nav aria-label="メインナビゲーション"><a href="#access">ACCESS</a><a href="#rsvp-title">参加登録 ↗</a></nav>
+    </header>
+    <section class="hero" id="top" aria-label="the emit ライブ">
+      <div class="hero-copy">
+        <p class="eyebrow">JAZZ / R&amp;B / ACOUSTIC LIVE</p>
+        <h1 class="title">the emit</h1>
+        <div class="season">2026 AUTUMN</div>
+        <div class="event-details" aria-label="イベント詳細">
+          <div class="date"><time datetime="2026-10-02">10.02</time><small>FRI</small></div>
+          <div class="info">
+            <div class="main-info">OPEN 19:00 / START 20:00</div>
+            <div class="main-info">2 Drinks + Music &nbsp; ¥3,000</div>
+            <div class="cash">Cash only</div>
+          </div>
+        </div>
+        <p class="hero-venue" id="access">Night Cafe OTTO<span>Akasaka, Tokyo</span></p>
+        <iframe class="map-frame" title="Night Cafe OTTO（東京都港区赤坂3-12-11 ゴールド赤坂8F）のGoogle Map" src="https://maps.google.com/maps?q=Night%20Cafe%20OTTO%20東京都港区赤坂3-12-11&amp;t=m&amp;z=16&amp;output=embed&amp;hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <address class="venue-address">〒107-0052 東京都港区赤坂3-12-11 ゴールド赤坂 8F</address>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Night+Cafe+OTTO+東京都港区赤坂3-12-11" target="_blank" rel="noopener noreferrer">Google Mapで開く <span aria-hidden="true">↗</span></a>
       </div>
     </section>
-
+    <section class="lineup" aria-labelledby="lineup-title">
+      <div class="section-inner reveal">
+        <h2 class="section-label" id="lineup-title">ON STAGE</h2>
+        <div class="musicians">
+          <p><span>Flute</span>Kaito Yamada</p>
+          <p><span>Guitar</span>Motoki Miyajima</p>
+          <p><span>Support Guitar</span>Ryu / Yuki</p>
+        </div>
+      </div>
+    </section>
+    <section class="poster-section" aria-label="ライブフライヤー">
+      <img class="poster" src="assets/live-poster.jpg" alt="the emit 2026 AUTUMN LIVEのフライヤー。暖かな灯りの中でフルートとギターを演奏するメンバー。" width="1181" height="1748" loading="lazy">
+    </section>
     <section class="rsvp" aria-labelledby="rsvp-title">
       <div class="rsvp-heading">
-        <h2 class="rsvp-label" id="rsvp-title">rsvp</h2>
+        <h2 class="rsvp-label" id="rsvp-title">See you there.</h2>
         <p class="rsvp-note">参加登録</p>
       </div>
 
@@ -412,8 +513,23 @@
       </div>
     </section>
   </main>
+  <footer><span>the emit — 2026 AUTUMN LIVE</span><span>OCTOBER 2 · NIGHT CAFE OTTO</span></footer>
 
   <script>
+    if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("is-pending");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach(section => {
+        section.classList.add("is-pending");
+        observer.observe(section);
+      });
+    }
     // Google Apps Script をデプロイした後、README の手順に沿って URL を貼り付けてください。
     const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz-qaGyc-KEYXDOMzM2J6-pSbDoykdCJh14tsysrMeVA8IRbeSp9GBrKnVQCL8mtVVe/exec";
 
