@@ -444,6 +444,22 @@
       .side-disc { width: 180px; left: -160px; top: 680px; }
       .bottom-disc { width: 210px; right: -175px; bottom: 80px; }
     }
+    .angular { position: absolute; width: 190px; height: 260px; transform: skewY(-18deg); background: #133c50; }
+    .angular::before, .angular::after { content: ""; position: absolute; }
+    .angular::before { inset: 0 55% 42% 0; background: #d2ad73; }
+    .angular::after { inset: 58% 0 0 45%; background: #e4d2b3; }
+    .angular-top { top: -80px; left: calc(50% - 680px); width: 235px; height: 310px; }
+    .angular-middle { top: 560px; right: calc(50% - 650px); transform: skewY(18deg); }
+    .angular-middle::before { background: #8d332a; }
+    .angular-bottom { top: 1320px; left: calc(50% - 640px); width: 170px; height: 340px; }
+    .angular-bottom::after { background: #163449; }
+    .square-outline { position: absolute; top: 1120px; right: calc(50% - 660px); width: 200px; height: 200px; border: 1px solid #d9c6a877; transform: rotate(18deg); }
+    @media (max-width: 799px) {
+      .angular-top { top: -38px; left: -45px; width: 112px; height: 145px; }
+      .angular-middle { top: 500px; right: -64px; width: 82px; height: 195px; }
+      .angular-bottom { top: 1170px; left: -68px; width: 86px; height: 235px; }
+      .square-outline { top: 1510px; right: -104px; width: 116px; height: 155px; }
+    }
     @media (prefers-reduced-motion: reduce) { .reveal.is-pending { opacity: 1; transform: none; } }
   </style>
 </head>
@@ -452,6 +468,7 @@
   <main>
     <div class="geometry" aria-hidden="true">
       <div class="moon"></div>
+      <div class="angular angular-top"></div><div class="angular angular-middle"></div><div class="angular angular-bottom"></div><div class="square-outline"></div>
       <div class="side-disc"></div><div class="bottom-disc"></div>
       <svg viewBox="0 0 1440 2400" preserveAspectRatio="none" fill="none"><path d="M-100 510C70 210 370 95 710 40M-160 1130C80 1200 160 1440 130 1800M1300 2400C1220 2090 1350 1830 1510 1780" stroke="#ecdfc5" stroke-opacity=".45" stroke-width="1"/><path d="M1160 0V420M1170 0V420" stroke="#ecdfc5" stroke-opacity=".4"/></svg>
     </div>
