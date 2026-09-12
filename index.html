@@ -408,8 +408,8 @@
     .hero .map-link { margin: 6px 0 36px; border-color: var(--line); }
     .lineup { padding: 44px 0; }
     .lineup .section-inner { width: min(680px, 84%); }
-    .musicians { grid-template-columns: 1fr; gap: 10px; }
-    .musicians p { display: block; font-size: 16px; line-height: 1.4; }
+    .musicians { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .musicians p { display: block; font-size: clamp(12px, 3.5vw, 16px); line-height: 1.4; white-space: nowrap; }
     .musicians span { display: block; margin: 0 0 2px; font-size: 12px; }
     .poster-section { padding: 0; }
     .poster-section .poster { width: min(680px, 84%); height: auto; margin: 0 auto; animation: none; }
