@@ -413,16 +413,15 @@
     .musicians span { margin-bottom: 5px; }
     .poster-section { padding: 0; }
     .poster-section .poster { width: min(680px, 100%); height: auto; margin: 0 auto; animation: none; }
+    .menu-section { width: min(680px, 84%); margin: 0 auto; padding: 48px 0; border-bottom: 1px solid var(--line); }
+    .menu-section h2 { margin: 0 0 12px; font-family: var(--serif); font-size: 44px; font-weight: 400; }
+    .menu-section p { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .15em; }
     @media (prefers-reduced-motion: reduce) { .reveal.is-pending { opacity: 1; transform: none; } }
   </style>
 </head>
 
 <body>
   <main>
-    <header class="masthead">
-      <a class="wordmark" href="#top" aria-label="the emit トップ">the emit</a>
-      <nav aria-label="メインナビゲーション"><a href="#access">ACCESS</a><a href="#rsvp-title">参加登録 ↗</a></nav>
-    </header>
     <section class="hero" id="top" aria-label="the emit ライブ">
       <div class="hero-copy">
         <p class="eyebrow">JAZZ / R&amp;B / ACOUSTIC LIVE</p>
@@ -452,8 +451,12 @@
         </div>
       </div>
     </section>
-    <section class="poster-section" aria-label="ライブフライヤー">
-      <img class="poster" src="assets/live-poster.jpg" alt="the emit 2026 AUTUMN LIVEのフライヤー。暖かな灯りの中でフルートとギターを演奏するメンバー。" width="1181" height="1748" loading="lazy">
+    <section class="poster-section" aria-label="ライブ写真">
+      <img class="poster" src="assets/live-photo.jpg" alt="暖かな灯りの中でフルートとギターを演奏するthe emitのメンバー。" width="2048" height="1365" loading="lazy">
+    </section>
+    <section class="menu-section" aria-labelledby="menu-title">
+      <h2 id="menu-title">Menu</h2>
+      <p>Coming Soon</p>
     </section>
     <section class="rsvp" aria-labelledby="rsvp-title">
       <div class="rsvp-heading">
