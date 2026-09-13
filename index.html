@@ -460,6 +460,11 @@
       .angular-bottom { top: 1170px; left: -68px; width: 86px; height: 235px; }
       .square-outline { top: 1510px; right: -104px; width: 116px; height: 155px; }
     }
+    .map-button { display: inline-flex; align-items: center; justify-content: space-between; width: min(100%, 240px); min-height: 52px; padding: 0 18px; border: 1px solid var(--text); background: var(--text); color: var(--bg); font-size: 14px; font-weight: 600; letter-spacing: .04em; transition: background .2s, color .2s, transform .2s; }
+    .map-button:hover { background: transparent; color: var(--text); transform: translateY(-2px); }
+    .map-button:hover .arrow { transform: translateX(4px); }
+    .venue-map { display: block; width: 100%; height: auto; margin-top: 28px; }
+    @media (max-width: 420px) { .map-button { width: 100%; } }
     @media (prefers-reduced-motion: reduce) { .reveal.is-pending { opacity: 1; transform: none; } }
   </style>
 </head>
@@ -494,9 +499,9 @@
           </div>
         </div>
         <p class="hero-venue" id="access">Night Cafe OTTO<span>Akasaka, Tokyo</span></p>
-        <iframe class="map-frame" title="Night Cafe OTTO（東京都港区赤坂3-12-11 ゴールド赤坂8F）のGoogle Map" src="https://maps.google.com/maps?q=Night%20Cafe%20OTTO%20東京都港区赤坂3-12-11&amp;t=m&amp;z=16&amp;output=embed&amp;hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="map-button" href="https://www.google.com/maps/search/?api=1&amp;query=Night+Cafe+OTTO+東京都港区赤坂3-12-11" target="_blank" rel="noopener noreferrer">Google Mapで開く <span class="arrow" aria-hidden="true">→</span></a>
+        <img class="venue-map" src="assets/otto-map.png" alt="Night Cafe OTTO周辺の案内地図。赤坂駅、溜池山王駅と会場の位置。" width="1592" height="988" loading="lazy">
         <address class="venue-address">〒107-0052 東京都港区赤坂3-12-11 ゴールド赤坂 8F</address>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Night+Cafe+OTTO+東京都港区赤坂3-12-11" target="_blank" rel="noopener noreferrer">Google Mapで開く <span aria-hidden="true">↗</span></a>
       </div>
     </section>
     <section class="menu-section" aria-labelledby="menu-title">
