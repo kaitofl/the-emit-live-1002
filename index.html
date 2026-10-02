@@ -108,194 +108,12 @@
       text-transform: lowercase;
     }
 
-    .rsvp {
-      margin-top: 42px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      animation: enter .7s .16s cubic-bezier(.2, .8, .2, 1) both;
-    }
-
-    .rsvp-heading {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .rsvp-label {
-      margin: 0;
-      font-family: "Fugaz One", sans-serif;
-      font-size: 18px;
-      font-weight: 400;
-      letter-spacing: .02em;
-      text-transform: lowercase;
-    }
-
-    .rsvp-note {
-      margin: 0;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .04em;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 112px;
-      gap: 24px 22px;
-    }
-
-    .field { display: grid; gap: 8px; }
-
-    .field-wide { grid-column: 1 / -1; }
-
-    .attendance { margin: 0; padding: 0; border: 0; }
-    .attendance legend { margin-bottom: 12px; font-size: 12px; font-weight: 600; letter-spacing: .08em; }
-    .attendance-options { display: flex; flex-wrap: wrap; gap: 12px 28px; }
-    .attendance-options label { display: flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; font-size: 14px; }
-    .attendance-options input { width: 18px; min-height: 18px; height: 18px; margin: 0; accent-color: var(--text); }
-    .attendance-options input:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
-    .field-hint { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; font-weight: 400; }
-
-    label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .08em;
-    }
-
-    input,
-    select {
-      width: 100%;
-      min-height: 46px;
-      padding: 10px 0;
-      border: 0;
-      border-bottom: 1px solid var(--line);
-      border-radius: 0;
-      outline: 0;
-      background: transparent;
-      color: var(--text);
-      font: inherit;
-      font-size: 16px;
-      transition: border-color .2s ease;
-    }
-
-    input::placeholder { color: rgba(22, 22, 22, .35); }
-
-    input:focus,
-    select:focus { border-color: var(--focus); }
-
-    select {
-      cursor: pointer;
-      appearance: none;
-      background-image:
-        linear-gradient(45deg, transparent 50%, var(--text) 50%),
-        linear-gradient(135deg, var(--text) 50%, transparent 50%);
-      background-position:
-        calc(100% - 7px) 50%,
-        calc(100% - 2px) 50%;
-      background-size: 5px 5px, 5px 5px;
-      background-repeat: no-repeat;
-    }
-
-    .privacy {
-      grid-column: 1 / -1;
-      margin: -4px 0 0;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.6;
-    }
-
-    .submit-row {
-      grid-column: 1 / -1;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      width: min(100%, 240px);
-      min-height: 52px;
-      padding: 0 18px;
-      border: 1px solid var(--text);
-      border-radius: 0;
-      background: var(--text);
-      color: var(--bg);
-      cursor: pointer;
-      font: inherit;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: .04em;
-      transition: background .2s ease, color .2s ease, transform .2s ease;
-    }
-
-    button:hover {
-      background: transparent;
-      color: var(--text);
-      transform: translateY(-2px);
-    }
-
-    button:focus-visible {
-      outline: 2px solid var(--focus);
-      outline-offset: 3px;
-    }
-
-    button:disabled {
-      opacity: .5;
-      cursor: wait;
-      transform: none;
-    }
-
     .arrow {
       font-size: 20px;
       font-weight: 400;
       line-height: 1;
       transition: transform .2s ease;
     }
-
-    button:hover .arrow { transform: translateX(4px); }
-
-    .form-status {
-      flex: 1;
-      margin: 0;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .form-status[data-state="error"] { color: var(--focus); }
-
-    .success {
-      padding: 22px 0 6px;
-      border-top: 1px solid var(--line);
-      animation: enter .45s cubic-bezier(.2, .8, .2, 1) both;
-    }
-
-    .success-title {
-      margin: 0 0 8px;
-      font-family: "Fugaz One", sans-serif;
-      font-size: 26px;
-      font-weight: 400;
-      letter-spacing: .01em;
-    }
-
-    .success p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .honeypot {
-      position: absolute;
-      left: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-
-    [hidden] { display: none !important; }
 
     @keyframes enter {
       from { opacity: 0; transform: translateY(12px); }
@@ -307,19 +125,6 @@
       .title { margin-bottom: 34px; }
       .info { font-size: 15px; }
       .main-info { font-size: 16px; }
-      .rsvp-heading {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 4px;
-      }
-      .form-grid { grid-template-columns: 1fr 88px; }
-      .field-name { grid-column: 1 / -1; }
-      .submit-row {
-        align-items: stretch;
-        flex-direction: column;
-        gap: 10px;
-      }
-      button { width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -374,15 +179,6 @@
     .map-link span { transition: transform .2s; }
     .map-link:hover span { transform: translate(3px, -3px); }
     .map-frame { width: 100%; height: 360px; border: 0; background: #d9d1c1; }
-    .rsvp { width: min(680px, 84%); margin: 0 auto; padding: 90px 0 100px; border: 0; }
-    .rsvp-label { font-family: var(--serif); font-size: 60px; line-height: 1; text-transform: none; }
-    .rsvp-heading { margin-bottom: 40px; }
-    input::placeholder { color: #9b9c98; }
-    select option { color: var(--text); background: var(--bg); }
-    .attendance-options input { accent-color: var(--focus); }
-    button { background: var(--text); color: var(--bg); }
-    .success-title { font-family: var(--serif); }
-    .form-status[data-state="error"] { color: #ffb2a3; }
     footer { display: flex; justify-content: space-between; gap: 20px; padding: 24px 8%; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; letter-spacing: .1em; }
     .reveal { transition: opacity .7s, transform .7s; }
     .reveal.is-pending { opacity: 0; transform: translateY(22px); }
@@ -397,7 +193,7 @@
       .lineup { padding: 50px 0; } .musicians { grid-template-columns: 1fr; gap: 28px; }
       .musicians p { font-size: 32px; } .musicians span { margin-bottom: 6px; }
       .access { padding: 56px 0; } .access-grid { grid-template-columns: 1fr; gap: 32px; }
-      .map-frame { height: 320px; } .rsvp { padding: 58px 0 64px; } .rsvp-label { font-size: 50px; }
+      .map-frame { height: 320px; }
       footer { flex-wrap: wrap; line-height: 1.7; }
     }
     .hero { display: block; min-height: auto; }
@@ -422,8 +218,6 @@
     .menu-section h2 { margin: 0 0 12px; font-family: var(--serif); font-size: 44px; font-weight: 400; }
     .menu-section p { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .15em; }
     .price-note { display: inline-block; margin-left: 8px; font-size: 13px; color: var(--muted); white-space: nowrap; }
-    .rsvp-heading { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
-    .rsvp-description { margin: 0 0 32px; color: var(--muted); font-size: 13px; line-height: 1.9; }
     main { position: relative; isolation: isolate; overflow: hidden; }
     .geometry { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
     .geometry svg { position: absolute; width: 100%; height: 100%; }
@@ -464,7 +258,7 @@
     .map-button:hover { background: transparent; color: var(--text); transform: translateY(-2px); }
     .map-button:hover .arrow { transform: translateX(4px); }
     .venue-map { display: block; width: 100%; height: auto; margin: 20px 0 24px; }
-    .rsvp + .menu-section { padding-top: 0; padding-bottom: 56px; border-bottom: 0; }
+    .hero + .menu-section { padding-bottom: 56px; border-bottom: 0; }
     @media (max-width: 420px) { .map-button { width: 100%; } }
     @media (prefers-reduced-motion: reduce) { .reveal.is-pending { opacity: 1; transform: none; } }
   </style>
@@ -505,62 +299,6 @@
         <a class="map-button" href="https://www.google.com/maps/search/?api=1&amp;query=Night+Cafe+OTTO+東京都港区赤坂3-12-11" target="_blank" rel="noopener noreferrer">Google Mapで開く <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </section>
-    <section class="rsvp" aria-labelledby="rsvp-title">
-      <div class="rsvp-heading">
-        <h2 class="rsvp-label" id="rsvp-title">RSVP</h2>
-      </div>
-      <p class="rsvp-description">人数把握のため、ご入力いただけると助かります。</p>
-
-      <form id="rsvp-form" novalidate>
-        <div class="form-grid">
-          <div class="field field-name">
-            <label for="name">名前・ニックネーム</label>
-            <input id="name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="誰かわかればOKです" required>
-          </div>
-
-          <div class="field" id="party-field">
-            <label for="party-size">人数</label>
-            <select id="party-size" name="partySize" required>
-              <option value="1">1人</option>
-              <option value="2">2人</option>
-              <option value="3">3人</option>
-              <option value="4">4人</option>
-              <option value="5">5人</option>
-              <option value="6">6人</option>
-            </select>
-          </div>
-
-          <fieldset class="attendance field-wide">
-            <legend>参加予定</legend>
-            <div class="attendance-options">
-              <label><input type="radio" name="attendance" value="行けそう" checked required>行けそう</label>
-              <label><input type="radio" name="attendance" value="行けなくなった" required>行けなくなった</label>
-            </div>
-          </fieldset>
-
-          <div class="honeypot" aria-hidden="true">
-            <label for="website">ウェブサイト</label>
-            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
-
-          <input name="event" type="hidden" value="the emit live 2026.10.02">
-
-
-          <div class="submit-row">
-            <button type="submit">
-              <span class="button-label">予定を送る</span>
-              <span class="arrow" aria-hidden="true">→</span>
-            </button>
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          </div>
-        </div>
-      </form>
-
-      <div class="success" id="success" tabindex="-1" hidden>
-        <h3 class="success-title">see you there.</h3>
-        <p>参加登録を受け付けました。10月2日に会えるのを楽しみにしています。</p>
-      </div>
-    </section>
     <section class="menu-section" aria-labelledby="menu-title">
       <h2 id="menu-title">Menu</h2>
       <p>Coming Soon</p>
@@ -582,80 +320,6 @@
         observer.observe(section);
       });
     }
-    // Google Apps Script をデプロイした後、README の手順に沿って URL を貼り付けてください。
-    const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbz-qaGyc-KEYXDOMzM2J6-pSbDoykdCJh14tsysrMeVA8IRbeSp9GBrKnVQCL8mtVVe/exec";
-
-    const form = document.querySelector("#rsvp-form");
-    const button = form.querySelector("button[type='submit']");
-    const buttonLabel = button.querySelector(".button-label");
-    const status = document.querySelector("#form-status");
-    const success = document.querySelector("#success");
-    const nameInput = form.elements.name;
-    const partySize = form.elements.partySize;
-    let submitting = false;
-
-    function updateAttendance() {
-      const cancelled = form.elements.attendance.value === "行けなくなった";
-      document.querySelector("#party-field").hidden = cancelled;
-      partySize.disabled = cancelled;
-    }
-    form.addEventListener("change", updateAttendance);
-    updateAttendance();
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (submitting) return;
-      status.textContent = "";
-      status.dataset.state = "";
-
-      nameInput.value = nameInput.value.trim();
-      if (!form.reportValidity()) return;
-
-      if (RSVP_ENDPOINT.startsWith("PASTE_")) {
-        status.textContent = "現在、受付の準備中です。少し時間をおいてお試しください。";
-        status.dataset.state = "error";
-        return;
-      }
-
-      button.disabled = true;
-      submitting = true;
-      buttonLabel.textContent = "送信中…";
-      form.setAttribute("aria-busy", "true");
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 30000);
-
-      try {
-        const payload = new URLSearchParams(new FormData(form));
-        if (payload.get("attendance") === "行けなくなった") payload.set("partySize", "0");
-        const response = await fetch(RSVP_ENDPOINT, {
-          method: "POST",
-          body: payload,
-          credentials: "omit",
-          signal: controller.signal,
-        });
-        if (!response.ok) throw new Error("HTTP error");
-        const result = await response.json();
-        if (result.ok !== true) throw new Error("Save failed");
-
-        const cancelled = payload.get("attendance") === "行けなくなった";
-        success.querySelector("h3").textContent = cancelled ? "thanks for letting us know." : "see you there.";
-        success.querySelector("p").textContent = cancelled
-          ? "「行けなくなった」で受け付けました。またの機会に会えるのを楽しみにしています。"
-          : "「行けそう」で受け付けました。10月2日に会えるのを楽しみにしています。";
-        form.hidden = true;
-        success.hidden = false;
-        success.focus();
-      } catch (error) {
-        status.textContent = "保存を確認できませんでした。登録済みの可能性もあるため、主催者にご確認ください。";
-        status.dataset.state = "error";
-      } finally {
-        clearTimeout(timeout);
-        submitting = false;
-        form.removeAttribute("aria-busy");
-        button.disabled = false;
-        buttonLabel.textContent = "予定を送る";
-      }
-    });
   </script>
 </body>
 </html>
