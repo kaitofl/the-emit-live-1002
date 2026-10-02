@@ -232,6 +232,21 @@
       .menu-group { margin-bottom: 28px; }
       .menu-items li { font-size: 14px; }
     }
+    .food-menu { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line); }
+    .food-menu .menu-kind { margin-top: 0; margin-bottom: 24px; }
+    .food-dishes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; }
+    .food-menu .menu-group { display: block; margin-top: 32px; }
+    .pasta-table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 13px; line-height: 1.7; }
+    .pasta-table .price-column { width: 88px; }
+    .pasta-table th, .pasta-table td { padding: 6px 0; vertical-align: top; }
+    .pasta-table thead th { color: var(--muted); font-size: 11px; font-weight: 400; text-align: right; }
+    .pasta-table tbody th { padding-right: 16px; font-weight: 400; text-align: left; overflow-wrap: anywhere; }
+    .pasta-table td { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .pasta-subcategory h5 { margin: 20px 0 4px; color: var(--focus); font-size: 12px; font-weight: 500; letter-spacing: .1em; }
+    @media (max-width: 599px) {
+      .food-dishes { grid-template-columns: 1fr; }
+      .pasta-table .price-column { width: 64px; }
+    }
     .price-note { display: inline-block; margin-left: 8px; font-size: 13px; color: var(--muted); white-space: nowrap; }
     main { position: relative; isolation: isolate; overflow: hidden; }
     .geometry { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
@@ -425,6 +440,48 @@
             </ul>
           </section>
         </div>
+      </section>
+      <section class="food-menu" aria-labelledby="food-title">
+        <h3 class="menu-kind" id="food-title">FOOD</h3>
+        <ul class="menu-items food-dishes">
+          <li><span>カプレーゼ</span><span class="menu-price">¥600</span></li>
+          <li><span>チーズ揚</span><span class="menu-price">¥600</span></li>
+          <li><span>エダマメ × ガーリック</span><span class="menu-price">¥600</span></li>
+          <li><span>ハムチーズクラッカー</span><span class="menu-price">¥600</span></li>
+          <li><span>チクワチーズ</span><span class="menu-price">¥600</span></li>
+          <li><span>トルティーヤ ナチョス風</span><span class="menu-price">¥700</span></li>
+          <li><span>ハムサンド</span><span class="menu-price">¥700</span></li>
+          <li><span>手羽先揚</span><span class="menu-price">¥700</span></li>
+          <li><span>トマトチーズサンド</span><span class="menu-price">¥700</span></li>
+          <li><span>焼カマンベール</span><span class="menu-price">¥1,200</span></li>
+          <li><span>タリアータ</span><span class="menu-price">¥1,500</span></li>
+        </ul>
+        <section class="menu-group" aria-labelledby="pasta-title">
+          <h4 id="pasta-title">PASTA</h4>
+          <table class="pasta-table" aria-labelledby="pasta-title">
+            <colgroup><col><col class="price-column"><col class="price-column"></colgroup>
+            <thead><tr><td></td><th scope="col">1人前</th><th scope="col">2人前</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">ナポリタン</th><td>¥1,200</td><td>¥2,200</td></tr>
+              <tr><th scope="row">トマト 大葉</th><td>¥1,200</td><td>¥2,200</td></tr>
+              <tr><th scope="row">プッタネスカ</th><td>¥1,200</td><td>¥2,200</td></tr>
+              <tr><th scope="row">エビ トマトクリーム</th><td>¥1,400</td><td>¥2,400</td></tr>
+              <tr class="pasta-subcategory"><th colspan="3"><h5>OIL</h5></th></tr>
+              <tr><th scope="row">シイタケ アーリオオーリオ</th><td>¥1,200</td><td>¥2,200</td></tr>
+              <tr><th scope="row">タコ 大葉 アーリオオーリオ</th><td>¥1,400</td><td>¥2,400</td></tr>
+              <tr class="pasta-subcategory"><th colspan="3"><h5>クリーム</h5></th></tr>
+              <tr><th scope="row">メンタイ</th><td>¥1,200</td><td>¥2,200</td></tr>
+              <tr><th scope="row">カルボナーラ</th><td>¥1,200</td><td>¥2,200</td></tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="menu-group" aria-labelledby="pizza-title">
+          <h4 id="pizza-title">ピザ</h4>
+          <ul class="menu-items">
+            <li><span>マルゲリータ</span><span class="menu-price">¥1,200</span></li>
+            <li><span>生ハム</span><span class="menu-price">¥1,200</span></li>
+          </ul>
+        </section>
       </section>
     </section>
   </main>
