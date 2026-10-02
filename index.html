@@ -216,7 +216,22 @@
     .hero-copy > .lineup .section-label { margin-bottom: 16px; }
     .menu-section { width: min(680px, 84%); margin: 0 auto; padding: 48px 0; border-bottom: 1px solid var(--line); }
     .menu-section h2 { margin: 0 0 12px; font-family: var(--serif); font-size: 44px; font-weight: 400; }
-    .menu-section p { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .15em; }
+    .menu-section .menu-kind { margin: 24px 0 10px; font-family: var(--serif); font-size: 30px; font-weight: 400; }
+    .menu-section .ticket-note { margin: 0 0 36px; color: var(--muted); font-size: 12px; line-height: 1.9; }
+    .ticket-mark { color: var(--focus); font-size: 12px; }
+    .drink-menu { columns: 2; column-gap: 48px; }
+    .menu-group { display: inline-block; width: 100%; margin-bottom: 32px; break-inside: avoid; vertical-align: top; }
+    .menu-group h4 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin: 0 0 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: 27px; font-weight: 500; line-height: 1.2; }
+    .menu-group h4 small { color: var(--muted); font-family: "Noto Sans JP", sans-serif; font-size: 10px; font-weight: 400; }
+    .menu-items { margin: 0; padding: 0; list-style: none; }
+    .menu-items li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 5px 0; font-size: 13px; line-height: 1.7; }
+    .menu-price { flex-shrink: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .menu-price .ticket-mark { margin-left: 6px; }
+    @media (max-width: 599px) {
+      .drink-menu { columns: 1; }
+      .menu-group { margin-bottom: 28px; }
+      .menu-items li { font-size: 14px; }
+    }
     .price-note { display: inline-block; margin-left: 8px; font-size: 13px; color: var(--muted); white-space: nowrap; }
     main { position: relative; isolation: isolate; overflow: hidden; }
     .geometry { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
@@ -301,7 +316,116 @@
     </section>
     <section class="menu-section" aria-labelledby="menu-title">
       <h2 id="menu-title">Menu</h2>
-      <p>Coming Soon</p>
+      <section aria-labelledby="drinks-title">
+        <h3 class="menu-kind" id="drinks-title">Drinks</h3>
+        <p class="ticket-note"><span class="ticket-mark" aria-hidden="true">★</span> 1,000円以上の商品はドリンクチケット対象外です。</p>
+        <div class="drink-menu">
+          <section class="menu-group" aria-labelledby="drink-category-1">
+            <h4 id="drink-category-1">Beer</h4>
+            <ul class="menu-items">
+              <li><span>グラスビール</span><span class="menu-price">¥600</span></li>
+              <li><span>シャンディーガフ</span><span class="menu-price">¥700</span></li>
+              <li><span>レッドアイ</span><span class="menu-price">¥700</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-2">
+            <h4 id="drink-category-2">Whisky <small>（scotch・bourbon）</small></h4>
+            <ul class="menu-items">
+              <li><span>ソーダ割り</span><span class="menu-price">¥700</span></li>
+              <li><span>水割り</span><span class="menu-price">¥700</span></li>
+              <li><span>ロック</span><span class="menu-price">¥700</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-3">
+            <h4 id="drink-category-3">Vodka</h4>
+            <ul class="menu-items">
+              <li><span>ウォッカソーダ</span><span class="menu-price">¥700</span></li>
+              <li><span>ウォッカトニック</span><span class="menu-price">¥700</span></li>
+              <li><span>モスコミュール</span><span class="menu-price">¥700</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-4">
+            <h4 id="drink-category-4">Rum</h4>
+            <ul class="menu-items">
+              <li><span>ラムソーダ</span><span class="menu-price">¥700</span></li>
+              <li><span>ラムトニック</span><span class="menu-price">¥700</span></li>
+              <li><span>ラムコーク</span><span class="menu-price">¥700</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-5">
+            <h4 id="drink-category-5">Gin</h4>
+            <ul class="menu-items">
+              <li><span>ジンソーダ</span><span class="menu-price">¥700</span></li>
+              <li><span>ジントニック</span><span class="menu-price">¥700</span></li>
+              <li><span>ジンバック</span><span class="menu-price">¥700</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-6">
+            <h4 id="drink-category-6">Tequila</h4>
+            <ul class="menu-items">
+              <li><span>ショット</span><span class="menu-price">¥700</span></li>
+              <li><span>テキーラソーダ</span><span class="menu-price">¥700</span></li>
+              <li><span>テキーラトニック</span><span class="menu-price">¥700</span></li>
+              <li><span>テキーラサンライズ</span><span class="menu-price">¥700</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-7">
+            <h4 id="drink-category-7">Shochu <small>（芋・麦）</small></h4>
+            <ul class="menu-items">
+              <li><span>ウーロンハイ</span><span class="menu-price">¥600</span></li>
+              <li><span>緑茶ハイ</span><span class="menu-price">¥600</span></li>
+              <li><span>ジャスミンハイ</span><span class="menu-price">¥700</span></li>
+              <li><span>レモンサワー</span><span class="menu-price">¥700</span></li>
+              <li><span>ソーダ割り</span><span class="menu-price">¥600</span></li>
+              <li><span>トマト割</span><span class="menu-price">¥700</span></li>
+              <li><span>ロック</span><span class="menu-price">¥600</span></li>
+              <li><span>水割り</span><span class="menu-price">¥600</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-8">
+            <h4 id="drink-category-8">Liqueur</h4>
+            <ul class="menu-items">
+              <li><span>カシス</span><span class="menu-price">¥800</span></li>
+              <li><span>ピーチ</span><span class="menu-price">¥800</span></li>
+              <li><span>ライチ</span><span class="menu-price">¥800</span></li>
+              <li><span>カンパリ</span><span class="menu-price">¥800</span></li>
+              <li><span>ベイリーズ</span><span class="menu-price">¥800</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-9">
+            <h4 id="drink-category-9">Wine</h4>
+            <ul class="menu-items">
+              <li><span>グラス赤</span><span class="menu-price">¥800</span></li>
+              <li><span>グラス白</span><span class="menu-price">¥800</span></li>
+              <li><span>Bottle</span><span class="menu-price">¥4,000 <span class="ticket-mark" role="img" aria-label="ドリンクチケット対象外">★</span></span></li>
+              <li><span>サングリア</span><span class="menu-price">¥800</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-10">
+            <h4 id="drink-category-10">Soft Drink</h4>
+            <ul class="menu-items">
+              <li><span>烏龍茶</span><span class="menu-price">¥600</span></li>
+              <li><span>ジャスミン茶</span><span class="menu-price">¥600</span></li>
+              <li><span>コーラ</span><span class="menu-price">¥600</span></li>
+              <li><span>ジンジャーエール</span><span class="menu-price">¥600</span></li>
+              <li><span>オレンジジュース</span><span class="menu-price">¥600</span></li>
+              <li><span>トマトジュース</span><span class="menu-price">¥700</span></li>
+              <li><span>ピーチジュース</span><span class="menu-price">¥700</span></li>
+              <li><span>クランベリージュース</span><span class="menu-price">¥700</span></li>
+              <li><span>マンゴージュース</span><span class="menu-price">¥700</span></li>
+            </ul>
+          </section>
+          <section class="menu-group" aria-labelledby="drink-category-11">
+            <h4 id="drink-category-11">Champagne</h4>
+            <ul class="menu-items">
+              <li><span>ヴーヴ・クリコ</span><span class="menu-price">¥23,000 <span class="ticket-mark" role="img" aria-label="ドリンクチケット対象外">★</span></span></li>
+              <li><span>ポメリー</span><span class="menu-price">¥13,000 <span class="ticket-mark" role="img" aria-label="ドリンクチケット対象外">★</span></span></li>
+              <li><span>ランブルスコ</span><span class="menu-price">¥5,000 <span class="ticket-mark" role="img" aria-label="ドリンクチケット対象外">★</span></span></li>
+              <li><span>スパークリングワイン</span><span class="menu-price">¥8,000 <span class="ticket-mark" role="img" aria-label="ドリンクチケット対象外">★</span></span></li>
+            </ul>
+          </section>
+        </div>
+      </section>
     </section>
   </main>
 
